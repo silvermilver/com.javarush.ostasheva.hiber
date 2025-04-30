@@ -83,9 +83,9 @@ public class Main {
 
     private List<City> fetchData(Main main) {
         try (Session session = main.sessionFactory.getCurrentSession()) {
-            List<Country> countries = main.countryDAO.getAll();
             List<City> allCities = new ArrayList<>();
             session.beginTransaction();
+            List<Country> countries = main.countryDAO.getAll();
 
             int totalCount = main.cityDAO.getTotalCount();
             int step = 500;
